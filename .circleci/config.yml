@@ -9,6 +9,6 @@ workflows:
         requires:
           - cypress/install
         store_artifacts: true
-        parrarel: true
-        parrarelism: 3
+        parallel: true
+        parallelism: 3
         group: 2 machines
