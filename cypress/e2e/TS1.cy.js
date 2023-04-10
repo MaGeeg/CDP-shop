@@ -42,7 +42,4 @@ describe('my first scenario', () => {
         cartPage.removeItemFromCart()
         cartPage.checkThatCartIsEmpty()
     })
-
-
-
 })
