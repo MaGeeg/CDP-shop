@@ -4,12 +4,8 @@ orbs:
 workflows:
   build:
     jobs:
-        - cypress/install
         - cypress/run:
             cypress-command: npx cypress run --parallel
-            requires:
-              - cypress/install
-            store_artifacts: true
             parallel: true
             parallelism: 2
             group: 2 machines
