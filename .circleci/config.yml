@@ -1,9 +1,17 @@
 version: 2.1
 orbs:
-  cypress: cypress-io/cypress@3.1.1
+  cypress: cypress-io/cypress@2.2.0
 workflows:
   build:
     jobs:
+        - cypress/install
         - cypress/run:
-            cypress-command: npx cypress run --parallel --record
-            parallelism: 2
+            requires:
+              - cypress/install
+            store_artifacts: true
+            spec: cypress/e2e/TS1.cy.js
+        - cypress/run:
+            requires:
+              - cypress/install
+            store_artifacts: true
+            spec: cypress/e2e/testShoppingProcess.cy.js
