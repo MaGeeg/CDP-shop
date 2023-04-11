@@ -8,7 +8,9 @@ workflows:
         - cypress/run:
             requires:
               - cypress/install
+            cypress-command:
+              npx cypress run --parallel
             store_artifacts: true
             parallel: true
-            parallelism: 3
+            parallelism: 2
             group: 2 machines
